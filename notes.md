@@ -37,3 +37,18 @@ Expectations for the readings are that they are not required, they are simply to
     Lecture
     In-class quiz (some weeks)
     Homework or Lab write-up due (alternating weeks)
+
+Keys to success: ***Integrity and Persistence***
+
+### Some HTML Stuff
+
+HTML is a declarative language, which means that information is simply given, and then something else (in this case a browser) interprets and renders the information that is "declared" in the HTML file.
+
+A useful website is the [Markup Validation Service](https://validator.w3.org/), which will check your HTML code for errors and give you feedback on how to fix them, based on widely accepted web standards.
+
+The `DOCTYPE` usually is where the HTML version is declared. Typing `html` simply defaults the DOCTYPE to the latest version of HTML. This is important because the version of HTML affects some of the default structures.
+
+> There is no good reason to use a previous HTML version, according to Prof. Redd.
+
+A good way to think about `head` and `body` elements, is that the `head` element contains metadata, and the `body` contains data.
+
