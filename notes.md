@@ -1,0 +1,39 @@
+# IT & C 210: Web Systems and Security
+
+## 1. Introduction
+
+**Command Line Interface**
+Some basic CLI commands that are new to me:
+
+- `ifconfig` : show the configurations for the current IP address
+- `passwd` : change the password for the current user
+- `apt-get` : package manager for Ubuntu
+- `chmod` : change the permissions for a file or directory
+- `chown` : change the owner of a file or directory
+- `ssh` : secure shell to connect to a remote server (remote into another machine securely)
+- `scp` : secure copy to copy files from one machine to another
+
+**Lecture 9/4 Introduction**
+This is a gateway class, not a weed-out class. Prof. Redd doesn't like or believe in weed-out courses which is good. 
+
+IT requires self-learning. All of the programming languages used in this class, with exception to SQL, Professor Redd had to learn after he graduated, outside of a formal programming class. I will likely have to do the same in my career.
+
+Prof Redd actually expects me to jump on Google and find things out in the moment during class. Give myself a green light to go and do that.
+
+Expectations for the readings are that they are not required, they are simply to supplement what I learn in class and give me extra help for homework and labs if I need it.
+
+> As I looked at the syllabus, I had a moment of anxiety about the pace of the class, if it is too fast, and about if I will really be able to learn all that I don't know. I remembered and recognized that not knowing much of the subject matter on day 1 is exactly the point! If I knew it all on day 1, that would make this whole following semester a waste of my time. The first day/week *should* be full of not knowing the subjects, but getting glimpses and ideas of what I will learn and what those things mean. Then I simply take those and learn with diligent, enthusiam, curiousity, and meekness/humility.
+
+**Rhythm of the Class:**
+
+- Monday:
+    Lecture, Demo, live Q&A
+    Lab period
+- Wednesday:
+    Lecture
+    Lab period, TA Kickoff the next lab
+    Lab pass-off due for the previous lab
+- Friday:
+    Lecture
+    In-class quiz (some weeks)
+    Homework or Lab write-up due (alternating weeks)
