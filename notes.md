@@ -52,3 +52,4 @@ The `DOCTYPE` usually is where the HTML version is declared. Typing `html` simpl
 
 A good way to think about `head` and `body` elements, is that the `head` element contains metadata, and the `body` contains data.
 
+> Git submodules are a way to include a repository within another repository.
