@@ -13,6 +13,14 @@ Some basic CLI commands that are new to me:
 - `ssh` : secure shell to connect to a remote server (remote into another machine securely)
 - `scp` : secure copy to copy files from one machine to another
 
+- A note about the `chmod` command:
+mode: Specifies the permissions to set. You can define these either in numeric form or symbolic form:
+Numeric (octal) mode: Permissions are represented by a three-digit number (e.g., 755, 644).
+- 4 = Read (r)
+- 2 = Write (w)
+- 1 = Execute (x)
+
+For git commands, one way to connect a local repository to a remote repository is to use the `git remote add origin <url>` command. This will add a remote repository to the local repository, and then you can use the `git push` command to push the local repository to the remote repository. Sometimes the command `git push origin main` is needed. Also try using the `-u` flag with the `git push` command to set the upstream branch.
 **Lecture 9/4 Introduction**
 This is a gateway class, not a weed-out class. Prof. Redd doesn't like or believe in weed-out courses which is good. 
 
