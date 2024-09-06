@@ -81,3 +81,22 @@ An HTML element is all of the tags and content between the opening and closing t
 A CSS styling statement is called a *rule*. A rule has a *selector*, which focuses in on a *property* and then gives it a *value*.
 
 Super good website for CSS tutorials: [W3Schools CSS Tutorial](https://www.w3schools.com/css/default.asp)
+
+The `transition` property in CSS is used to change the property of an element gradually. It is a shorthand property for the four transition properties: `transition-property`, `transition-duration`, `transition-timing-function`, and `transition-delay`. 
+
+An example of this property being used in a CSS rule is:
+
+```css
+div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: width 2s;
+}
+
+div:hover {
+  width: 300px;
+}
+```
+
+What this does is make the width of the `div` element change from 100px to 300px over a 2 second period when the mouse hovers over the `div` element. The syntax for the transition property is `transition: property duration timing-function delay;`.
