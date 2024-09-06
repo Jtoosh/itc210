@@ -61,3 +61,23 @@ The `DOCTYPE` usually is where the HTML version is declared. Typing `html` simpl
 A good way to think about `head` and `body` elements, is that the `head` element contains metadata, and the `body` contains data.
 
 > Git submodules are a way to include a repository within another repository.
+
+**Lecture 9/6: HTML and CSS:**
+
+HTML
+: Runtime Model: interpreted (parsed into Document Object Model)
+Object oriented: each HTML element becomes an object in the DOM
+
+HTML elements can be roughly grouped into 4 groups:
+
+1. Metadata: includes elements like `title`, `meta`, `link`, `style`, and `script`. These all appear in the `head` element.
+2. Functional and Structural Markup: Dictatces the function and structure of the document. Includes `html`, `head`, `body`, `header`, `footer`, `div`, `span` and others
+3. Semantic Markup: Includes elements like `h1` to `h6`, `p`, `code` and others.
+4. Visual markup: `bold`, `italic`, `u`, `em`,`strong`, `</br>` and others. These are generally not used, because CSS is used to style the document instead.
+
+Some terminology:
+An HTML element is all of the tags and content between the opening and closing tags. The attributes are extra information stated in the opening tag of an element.
+
+A CSS styling statement is called a *rule*. A rule has a *selector*, which focuses in on a *property* and then gives it a *value*.
+
+Super good website for CSS tutorials: [W3Schools CSS Tutorial](https://www.w3schools.com/css/default.asp)
