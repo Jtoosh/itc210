@@ -18,10 +18,10 @@ h2{
 img {
     width: 200px;
     height: 200px;
-    transition: width 2s, height 2s;
+    transition: width 1s, height 1s;
 }
 
 img:hover{
-    width: 400px;
-    height: 400px;
+    width: 250px;
+    height: 250px;
 }
