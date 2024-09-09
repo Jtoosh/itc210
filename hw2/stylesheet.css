@@ -4,7 +4,7 @@ body{
 }
 nav{
 display: flex;
-flex-flow: row, nowrap;
+flex-flow: row nowrap;
 height: auto;
 position: static;
 background-color: royalblue;
