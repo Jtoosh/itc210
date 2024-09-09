@@ -100,3 +100,34 @@ div:hover {
 ```
 
 What this does is make the width of the `div` element change from 100px to 300px over a 2 second period when the mouse hovers over the `div` element. The syntax for the transition property is `transition: property duration timing-function delay;`.
+
+**Lecture 9/8: Git, Markdown, WSL and Docker**
+Git is a VCS (Version Control System). It is like the Google Drive of programming (according to Reagan lol). It tracks all of the changes made to tracked files, saves you from mistakes and hardware/software failures, allows with collaborations, and allows you to go back to previous versions of your code.
+
+Some lingo:
+
+- Remote: a shared copy of a repo on a managed service like GitHub or GitLab
+- Push: copying commits from a local to a remote
+- Pull: retrieve *and* merge commits from a remote
+- Sync: pull and then push
+- Branch: commits in the same repo, but not on or affecting the main branch
+- Fork: A copy of the entire repo, on a remote
+- Pull request: a request for a repo manager to merge in commits from a branch or a fork.
+
+Git Remote Hosts:
+
+- GitHub (most popular)
+- Atlassian Bitbucket (also quite popular)
+- SourceForge
+- GitLab
+
+**Docker:**
+
+Containers
+: Like a lightweight virtual machine in which libraries and aapplications can be installed. This isolates the application from the host machine, to prevent conflicts. Containers are also less resource-intensive than VMs.
+
+Unlike a VM, a container can share resources with the host machine, like the RAM, CPU, and storage.
+Docker is the most popular container host.
+
+- Docker-compose.yml files load one or more containers and connect them using virtural networks or shared file mappings.
+- DOCKERFILE is a set of instructions to create a new container, usually by editing an existing container.
