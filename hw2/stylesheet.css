@@ -29,7 +29,6 @@ h2{
 .articleText {
     position: relative;
     top: 50px;
-    
 }
 
 ul{
@@ -58,6 +57,7 @@ a{
     border-right: solid black 2.5px;
     border-left: solid black 2.5px;
     margin-top: 0px;
+    padding: 5px;
 }
 
 footer{

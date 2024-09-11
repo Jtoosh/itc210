@@ -62,6 +62,8 @@ A good way to think about `head` and `body` elements, is that the `head` element
 
 > Git submodules are a way to include a repository within another repository.
 
+## Lecture Notes
+
 **Lecture 9/6: HTML and CSS:**
 
 HTML
@@ -131,3 +133,32 @@ Docker is the most popular container host.
 
 - Docker-compose.yml files load one or more containers and connect them using virtural networks or shared file mappings.
 - DOCKERFILE is a set of instructions to create a new container, usually by editing an existing container.
+
+**Lecture 9.11.24**
+Reminder of CSS selectors: [Basic Selectors](./udemyNotes.md#css-selectors) and [Combining Selectors](./udemyNotes.md#combining-css-selectors)
+
+Reminder of CSS units: [CSS Units](www.w3schools.com/cssref/css_units.asp)
+
+To set variables in CSS, use the `--` prefix. For example:
+
+```css
+body{
+  --main-bg-color: #ff0000;
+  background-color: var(--main-bg-color);
+}
+```
+
+Remember, the first line in that CSS rule doesn't actually do anything, because it is not in 'property: value' format. It is simply setting a variable. The second line is what actually uses the variable and sets its value to a property.
+
+Usually I'll want to set variables in the `body` element, because that will make their scope the entirety of the visible content. The scope of CSS varibles is the element in which they are set, and all of its children.
+
+I already know about `block` and `inline` display types, but I learned that there are certain html elements that have default display types. Block elements include `div`, `p`, and `table`. Inline elements include `span`, `a`, `em`, and `img`.
+
+Reminders on margin, border, and padding:
+
+- Margin is the space from the border of an element to the border of the next element, or the edge of the screen.
+- Border is the line that surrounds the element.
+- Padding is the space between the border of an element and the content of the element.
+
+>Something interesting that I noticed as I worked on hw2 was the annoying dependency that was created between element positions when I used absolute positioning. Anytime I wanted to slightly edit an element, I would have to edit the position of several others. Something I'll need to look out for in the future is avoiding that, and knowing how to manage it. I think a better understanding of how the CSS positioning properties work will help me with that.
+
