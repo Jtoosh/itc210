@@ -22,7 +22,7 @@ Numeric (octal) mode: Permissions are represented by a three-digit number (e.g.,
 
 For git commands, one way to connect a local repository to a remote repository is to use the `git remote add origin <url>` command. This will add a remote repository to the local repository, and then you can use the `git push` command to push the local repository to the remote repository. Sometimes the command `git push origin main` is needed. Also try using the `-u` flag with the `git push` command to set the upstream branch.
 **Lecture 9/4 Introduction**
-This is a gateway class, not a weed-out class. Prof. Redd doesn't like or believe in weed-out courses which is good. 
+This is a gateway class, not a weed-out class. Prof. Redd doesn't like or believe in weed-out courses which is good.
 
 IT requires self-learning. All of the programming languages used in this class, with exception to SQL, Professor Redd had to learn after he graduated, outside of a formal programming class. I will likely have to do the same in my career.
 
@@ -64,7 +64,7 @@ A good way to think about `head` and `body` elements, is that the `head` element
 
 ## Lecture Notes
 
-**Lecture 9/6: HTML and CSS:**
+### Lecture 9/6: HTML and CSS
 
 HTML
 : Runtime Model: interpreted (parsed into Document Object Model)
@@ -84,8 +84,7 @@ A CSS styling statement is called a *rule*. A rule has a *selector*, which focus
 
 Super good website for CSS tutorials: [W3Schools CSS Tutorial](https://www.w3schools.com/css/default.asp)
 
-The `transition` property in CSS is used to change the property of an element gradually. It is a shorthand property for the four transition properties: `transition-property`, `transition-duration`, `transition-timing-function`, and `transition-delay`. 
-
+The `transition` property in CSS is used to change the property of an element gradually. It is a shorthand property for the four transition properties: `transition-property`, `transition-duration`, `transition-timing-function`, and `transition-delay`.
 An example of this property being used in a CSS rule is:
 
 ```css
@@ -103,7 +102,8 @@ div:hover {
 
 What this does is make the width of the `div` element change from 100px to 300px over a 2 second period when the mouse hovers over the `div` element. The syntax for the transition property is `transition: property duration timing-function delay;`.
 
-**Lecture 9/8: Git, Markdown, WSL and Docker**
+### Lecture 9/8: Git, Markdown, WSL and Docker
+
 Git is a VCS (Version Control System). It is like the Google Drive of programming (according to Reagan lol). It tracks all of the changes made to tracked files, saves you from mistakes and hardware/software failures, allows with collaborations, and allows you to go back to previous versions of your code.
 
 Some lingo:
@@ -134,7 +134,8 @@ Docker is the most popular container host.
 - Docker-compose.yml files load one or more containers and connect them using virtural networks or shared file mappings.
 - DOCKERFILE is a set of instructions to create a new container, usually by editing an existing container.
 
-**Lecture 9.11.24**
+### Lecture 9.11.24: CSS
+
 Reminder of CSS selectors: [Basic Selectors](./udemyNotes.md#css-selectors) and [Combining Selectors](./udemyNotes.md#combining-css-selectors)
 
 Reminder of CSS units: [CSS Units](www.w3schools.com/cssref/css_units.asp)
@@ -162,3 +163,25 @@ Reminders on margin, border, and padding:
 
 >Something interesting that I noticed as I worked on hw2 was the annoying dependency that was created between element positions when I used absolute positioning. Anytime I wanted to slightly edit an element, I would have to edit the position of several others. Something I'll need to look out for in the future is avoiding that, and knowing how to manage it. I think a better understanding of how the CSS positioning properties work will help me with that.
 
+### Lecture 9.13.24: Javascipt Intro
+
+**`var`, `let`, and `const`**
+
+| **Keyword** | **Scope**       | **Hoisting** | **Redeclarable** | **Reassignable** |
+|-------------|-----------------|--------------|------------------|------------------|
+| `var`       | Function scope  | Yes          | Yes              | Yes              |
+| `let`       | Block scope     | No           | No               | Yes              |
+| `const`     | Block scope     | No           | No               | No               |
+
+Just like CSS, Javascript can be place inline using certain Javascript attributes (like `onmouseover`), internally using a `script` element, or externally by having a `link` element to a `.js` file.
+
+Hoisting
+: The process of moving variable and function declarations to the top of their containing scope during the compilation phase. *Initialization*, or initial assignment, is not hoisted. So, a variable can be accessed without throwing a breaking error, but the value will be `undefined`.
+
+Only variables can be declared or instantiated more than once. Functions can only be declared once, but can be reassigned.
+
+Using `use strict` at the top of a script will make the script run in strict mode, which will not allow variables to be declared without the `var`, `let`, or `const` keywords.
+
+`let` and `const` don't get hoisted, so they can't be accessed before they are declared. This is a good thing, because it prevents bugs.
+
+According to Prof. Redd, functions are just code assigned to variables.
