@@ -163,6 +163,8 @@ Reminders on margin, border, and padding:
 
 >Something interesting that I noticed as I worked on hw2 was the annoying dependency that was created between element positions when I used absolute positioning. Anytime I wanted to slightly edit an element, I would have to edit the position of several others. Something I'll need to look out for in the future is avoiding that, and knowing how to manage it. I think a better understanding of how the CSS positioning properties work will help me with that.
 
+To get a decent walkthrough on getting a 5-box layout using different CSS methods, [click here](https://byu-itc-210.github.io/walkthrough/FiveBoxCss)
+
 ### Lecture 9.13.24: Javascipt Intro
 
 **`var`, `let`, and `const`**
@@ -215,3 +217,4 @@ The method `addEventListener()` is used to attach an event handler to an element
 
 `window` is the global object in a browser, and it represents the browser window. It can be accessed and manipulated in the DOM.
 
+>Random Markdown note: when making internal links, use # and then the name of the heading, in all lowercase and with spaces replaced by hyphens. For example, to link to the heading "DOM and DOM Events", use `#dom-and-dom-events`. Only one # is needed, regardless of the heading level.
