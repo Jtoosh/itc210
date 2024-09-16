@@ -445,7 +445,7 @@ Side note: `console.log()` is a method that will log text to the JS console, ins
 Side note: `Math.floor()` is a method to do floor division. It can also be used on a single argument to simply round that number down.
 I do like the way that the instructor described three different types of functions: functions that take no parameters and have no output are like vanilla, functions that take parameters are like chocolate, and functions that take parameters and return values are like strawberry. 
 
-`Math.random()` is a method that returns a random number between 0 and 1. There isn't a `randint()` method of any kind, so getting a random number between two arbitrary values can be trickier, but not very tough. You simply multiply the random deciaml by the max range value, then round that number down, and that is your random integer. 
+`Math.random()` is a method that returns a random number between 0 and 1. There isn't a `randint()` method of any kind, so getting a random number between two arbitrary values can be trickier, but not very tough. You simply multiply the random decimal by the max range value, then round that number down, and that is your random integer. 
 
 > **Side Note:**
 Because Math.random() excluded 1 from the number generation range, the max possible value from this method is one less than the desired max range. This can be resolved by keeping the same equation and multiplying the random number by the max range value plus 1, then rounding down. Or, if the bottom range is exclusive, you can multiple the random number by the max and then simply add one after rounding down.

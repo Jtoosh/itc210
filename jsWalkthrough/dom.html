@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM Demo</title>
+</head>
+<body>
+    <h1>JS DOM Demo</h1>
+    <main>
+        <p id="p1"></p>
+        <p>
+            My favoriet foods are <span class="num"></span> sushi, <span class="num"></span>
+            burgers, and <span class="num"></span> burritos.
+        </p>
+
+        <ul>
+            <li>Shirt</li>
+            <li>Shoes</li>
+            <li>Socks</li>
+            <li>Pokedex</li>
+        </ul>
+    </main>
+    <script>
+        document.getElementById("p1").innerHTML = "I could beat Brian at Rocket League, <strong>easily</strong>.";
+
+        {
+            let counter = 1;
+            for (let num of document.getElementsByClassName('num')){
+                num.textContent = counter + ".";
+                counter +=1;
+            }
+        }
+
+        for (let item of document.getElementsByTagName("li")){
+            item.textContent += " required";
+            if (item.textContent == "Socks required"){
+                item.textContent += ", no raw dawgs in my shop.";
+            }
+        }
+
+        document.querySelector("h1").style.fontStyle = "italic";
+    </script>
+</body>
+</html>

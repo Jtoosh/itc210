@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Events Demo</title>
+</head>
+
+<body>
+    <h1>JavaScript Events Demo</h1>
+
+    <nav>
+        <button onclick="loadLorem()">Load Article</button>
+    </nav>
+
+    <article id="greeting">
+    </article>
+
+    <script>
+        function loadLorem() {
+    let words = ["lorem", "ipsum", "dolor", "sit", "amet"];
+
+    let article = document.getElementsByTagName("article")[0];
+    for (let i=0; i<100; ++i)
+    {
+        let word = words[Math.floor(Math.random() * words.length)];
+        let span = document.createElement("span");
+        // let h1 = document.querySelector('h1')
+        span.textContent = word;
+        span.onmouseover = makeBold;
+        article.appendChild(span);
+        article.appendChild(document.createTextNode(" "));
+    }
+}
+function makeBold(e) {
+    e.target.style.fontWeight = "bold";
+    e.target.style.color = "red";
+}
+
+function setGreeting(){
+    document.getElementById("greeting").textContent = "Goooooooooood morning Vietnam! "
+}
+
+window.addEventListener("load", setGreeting);
+
+window.addEventListener("load", loadLorem);
+    </script>
+</body>
+
+</html>

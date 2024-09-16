@@ -185,3 +185,33 @@ Using `use strict` at the top of a script will make the script run in strict mod
 `let` and `const` don't get hoisted, so they can't be accessed before they are declared. This is a good thing, because it prevents bugs.
 
 According to Prof. Redd, functions are just code assigned to variables.
+
+### Lecture 9.16.24: DOM and DOM Events
+
+W3C
+: World Wide Web Consortium. The main international standards organization for the World Wide Web.
+
+Any time `innerHTML` is used, it is a security risk, so be aware of that. Someone could inject malicious code into the `innerHTML` property of an element.
+
+Be careful of `getElementsbyName` and `getElementsbyTagName`. The naming can be deceiving, as `getElementsbyName` returns based on the `name` attribute, and `getElementsbyTagName` returns based on the name of the actual HTML element.
+
+Anatomy of Event Handling:
+
+```javascript
+<button onclick= "PlayMusic()">
+```
+
+- `button` is the DOM element, or the HTML element that the event is attached to.
+- `onclick` is the event that is being listened for, or the thing that triggers the code to execute.
+- `PlayMusic()` is the code that is executed when the event is triggered.
+
+There are lots of events that can be listened for, like `click`, `mouseover`, `mouseout`, `keydown`, `keyup`, `keypress`, `load`, `resize`, `scroll`, `select`, `submit`, `change`, `focus`, `blur`, and many others.
+
+An event listener is a function that performs an action based on a specific event. It waits for an event to occur, and then executes the code that is associated with that event. This code example above is an example of an event listener.
+
+The method `addEventListener()` is used to attach an event handler to an element. The other way to attach an event handler is to use the `on` attribute in the HTML element. So, the actual event name is `click`, and 'onclick' is an attribute that is used to attach an event handler to an element inline.
+
+`document.createElement()` is a method that creates an HTML element. Created elements are not displayed until they are added to the DOM tree by using the `appendChild()` method.
+
+`window` is the global object in a browser, and it represents the browser window. It can be accessed and manipulated in the DOM.
+
