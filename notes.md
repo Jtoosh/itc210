@@ -218,3 +218,35 @@ The method `addEventListener()` is used to attach an event handler to an element
 `window` is the global object in a browser, and it represents the browser window. It can be accessed and manipulated in the DOM.
 
 >Random Markdown note: when making internal links, use # and then the name of the heading, in all lowercase and with spaces replaced by hyphens. For example, to link to the heading "DOM and DOM Events", use `#dom-and-dom-events`. Only one # is needed, regardless of the heading level.
+
+### Lecture 9.18.24: Javascript Object Notation (JSON)
+
+JSON
+: JavaScript Object Notation. A "syntax for storing and exchanging text information". Similar to XML, but faster, easier to parse, and like XML is language and platform independent.
+
+JSON info from language card:
+
+- Property names are case sensitive and dynamically typed
+- It is a declarative language since it is just data representation, runtime model is interpreted
+- For sytanx, each 'object' is represented by braces `{}` and arrays are represented by brackets `[]`. The property name and value must be in double quotes, and a colon always separates the property from the value, and a comma separate a pair from another pair: `{ "Name": "John", "Name": "Simon: }`.
+- Pure JSON doesn't allow comments, but lots of JSON parsers allow JS comments.
+- JSON is object oriented in that it defines objects and arrays to be manipulated by another programming language.
+- JSON is a subset of JS and can be embedded directly into JS code. It is likely the most popular data representation language, right up there with CSV.
+
+- JavaScript has a JSON object that has its own methods. A JavaScript object can be converted to JSON using the `JSON.stringify()` method, and a JSON object can be converted to a JavaScript object using the `JSON.parse()` method. 
+
+- When JSON is converted to a JavaScript object, because JSON uses objects and properties, the JavaScript object functions just like any other programming class/object, and the properties can be accessed using dot notation.
+
+- The `preventDefault()` method is used to prevent the default action of an event from happening. For example, if a form is submitted, the default is to send the data to the server and refresh, but sometimes that is not desired.
+
+- The `.target` property of an event object is a reference to the object that dispatched or triggered the event.
+
+- The `Object` object is a global object that is used to create objects. It has a number of built-in methods that are used to manipulate objects. For example, the `.fromEntries()` method is used to create an object from an array of key-value pairs. When passed in a `FormData` it will return an object with a property for each of the entries, with the value being the value of the entry.
+
+localStorage
+: String data that can be stored on a webpage between page refreshes and browser sessions. It is stored in the browser, and can be accessed using the `localStorage` object. Each distinct URL has its own local storage, and the data is stored as key-value pairs.
+
+sessionStorage
+: String data similar to localStorage, with the exception that it is cleared when the browser is closed. Different tabs have different sessionStorages, even if they are on the same URL. Similar to localStorage, it is accessed using the `sessionStorage` object.
+
+The storage for a website can be viewed in the browser's developer tools, under the `Application` tab.

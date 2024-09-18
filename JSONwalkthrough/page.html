@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>JSON Experiments</title>    
+    </head>
+    <body>
+        <h1>JSON Experiments</h1>
+
+        <article></article>
+        <form onsubmit="submitForm(event)">
+            <label for="name">Name:</label> <input type='text' id='name' name='name'/><br/>
+            <label for="color">Favorite Color:</label> <input type='text' id='color' name='color'/><br/>
+            <input type='submit' value='Submit'/>        
+        </form>
+
+        <script>
+            let band = 
+{
+  "groupName": "The Monkees",
+  "members": [
+    {"firstName": "Davey", "lastName": "Jones"},
+    {"firstName": "Peter", "lastName": "Tork"},
+    {"firstName": "Michael", "lastName": "Nesmith"},
+    {"firstName": "Micky", "lastName": "Dolenz"}
+  ]
+}
+function addToArticle(name, value) {
+    let p = document.createElement("p");
+    let span = document.createElement("span");
+    span.textContent = name;
+    p.appendChild(span);
+    p.appendChild(document.createTextNode(": "));
+    span = document.createElement("span");
+    span.textContent = value;
+    p.appendChild(span);
+    document.getElementsByTagName("article")[0].appendChild(p);
+}
+
+addToArticle("Band", band.groupName);
+for (let entry of band.members) {
+    addToArticle("Member", entry.firstName + " " + entry.lastName); 
+}
+
+let car = {
+    make: "MINI",
+    model: "Cooper",
+    year: "2004"
+}
+
+let car_json = JSON.stringify(car)
+addToArticle("Car JSON", JSON.stringify(car));
+addToArticle("Car Object Model", JSON.parse(car_json).model);
+
+function submitForm(event) {
+    event.preventDefault();
+    let formData = new FormData(event.target);
+    let json = JSON.stringify(Object.fromEntries(formData));
+    addToArticle("Form", json);
+
+    localStorage.setItem("form", json);
+}
+
+function loadFormFromStorage() {
+    let json = localStorage.getItem("form");
+    if (!json) return;
+    let data = JSON.parse(json);
+    document.getElementById("name").value = data.name;
+    document.getElementById("color").value = data.color;
+}
+
+window.addEventListener("load", loadFormFromStorage);
+        </script>
+    </body>
+</html>
