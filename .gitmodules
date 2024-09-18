@@ -4,3 +4,6 @@
 [submodule "lab-1b-Jtoosh"]
 	path = lab-1b-Jtoosh
 	url = https://github.com/BYU-ITC-210/lab-1b-Jtoosh.git
+[submodule "lab-2a-Jtoosh"]
+	path = lab-2a-Jtoosh
+	url = https://github.com/BYU-ITC-210/lab-2a-Jtoosh.git
