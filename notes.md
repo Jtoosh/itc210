@@ -233,7 +233,7 @@ JSON info from language card:
 - JSON is object oriented in that it defines objects and arrays to be manipulated by another programming language.
 - JSON is a subset of JS and can be embedded directly into JS code. It is likely the most popular data representation language, right up there with CSV.
 
-- JavaScript has a JSON object that has its own methods. A JavaScript object can be converted to JSON using the `JSON.stringify()` method, and a JSON object can be converted to a JavaScript object using the `JSON.parse()` method. 
+- JavaScript has a JSON object that has its own methods. A JavaScript object can be converted to JSON using the `JSON.stringify()` method, and a JSON object can be converted to a JavaScript object using the `JSON.parse()` method.
 
 - When JSON is converted to a JavaScript object, because JSON uses objects and properties, the JavaScript object functions just like any other programming class/object, and the properties can be accessed using dot notation.
 
@@ -250,3 +250,101 @@ sessionStorage
 : String data similar to localStorage, with the exception that it is cleared when the browser is closed. Different tabs have different sessionStorages, even if they are on the same URL. Similar to localStorage, it is accessed using the `sessionStorage` object.
 
 The storage for a website can be viewed in the browser's developer tools, under the `Application` tab.
+
+### Lecture 9.20.24: Networking
+
+Local Area Network (LAN)
+: A set of computers connected by some medium (wire, radio, hub, router, etc.). Each device on the LAN can access any other device on the LAN, and can broadcast to all other devices on the LAN.
+
+An internet
+: A set of LANs connected by routers. Routers bridge between each LAN, deciding where to send certain packets, and which packets don't move.
+
+The Internet
+: the internet that connects most of the world.
+
+Tier 1 Network/ISP
+: The top level of Internet Protocol (IP) networks, which can reach each other without paying for transit. They are the backbone of the internet. Examples include AT&T, Verizon, and Sprint in the USA, and others like NTT in Japan. A full list can be found [here](https://en.wikipedia.org/wiki/Tier_1_network).
+
+MA: Multiple Access
+: A communication protocol that allows multiple devices to share a single communication line or channel. Capacity is limited because too many packets being sent at once can cause collisions.
+
+CSMA: Carrier Sense Multiple Access
+: A protocol that listens to the channel before transmitting data. If the channel is busy, the device waits for a random amount of time before trying again. This one change increases the capacity of the channel significantly from simple MA
+
+CSMA/CD: Carrier Sense Multiple Access with Collision Detection
+: Behaves the same as CSMA, listening before transmitting, but also listens while transmitting. If what is heard during transmission is different from what is sent, a collision has occurred. The device then stops transmitting and waits a random amount of time before trying again.
+
+CSMA/CD + Switches: Contemporary Local Area Networks (LAN)
+: Get definition later
+
+Other MA Protocols:
+
+- FDMA: Frequency Division Multiple Access
+  Always a part of wireless/broadband systems
+- TDMA: Time Division Multiple Access
+  Used in 2G cell phone systems
+- CDMA: Code Division Multiple Access
+  Used in 3G cell phone systems
+- OFDMA: Orthogonal Frequency Division Multiple Access
+  Used in 4G, 5G cell phone systems and WiFi 6.
+
+OSI model: Open Systems Interconnection model
+: A conceptual framework that standardizes the functions of a telecommunication or computing system into seven abstraction layers. Each layer serves the layer above it and is served by the layer below it. The layers are: Physical, Data Link, Network, Transport, Session, Presentation, and Application. 
+
+Turns out that OSI is all theory and not practiced. Only TCP/IP is used in practice.
+
+TCP/IP model: Transmission Control Protocol/Internet Protocol model
+: A model that is used to describe the functions of a networking system. It is a five-layer model that includes the Application, Transport, Internetwork(IP), Link(Network accesss), and Physical layers. The TCP/IP model is used to describe the functions of the internet.
+
+Layer 4 and up is mostly software. Layer 3 is where routing happenes. Networks, hubs, switches, and access points are all layer 2 devices. Layer 1 is the physical layer, and is the actual hardware that is used to transmit data, like cables, fiber, and radio waves.
+
+Hub vs Switch:
+
+- Hub: Broadcasts all packets to all devices on the network. 
+- Switch: Only sends packets to the device that the packet is intended for.
+- Switches are more efficient than hubs, because they don't broadcast all packets to all devices.
+- Switches are more complicated than hubs, and they need to know the MAC address of the devices on the network to send packets to the correct device.
+- Max capacity of a hub is the capacity of the network, because it broadcasts all packets to all devices. The max capacity of a switch is the capacity of the network times the number of ports on the switch times 2.
+
+Switch vs Router:
+
+- Switches are used to connect devices on the same network, and routers are used to connect devices on different networks.
+- Switches are a layer 2 device, and routers are a layer 3 device.
+- Switches use MAC addresses to send packets to the correct device, and routers use IP addresses to send packets to the correct network.
+
+Layer 3 Network:
+
+- Also known as Internet Protocol (IP)
+- Data is sent in packets, thus a packet-switched network
+- Packets may take different routes to the destination, and may even arrive out of order
+
+Layer 4 Transport:
+
+UDP: Universal Datagram Protocol vs TCP: Terminal Control Protocol
+
+- Both rely on IP
+- TCP is reliable (retries as needed), and UDP is not (best-effort)
+- TCP is connection-oriented, and UDP is message-oriented
+- Ordered delivery is guaranteed with TCP, but UDP is unordered delivery
+- TCP has flow control, but UDP does not
+- TCP includes a port number, UDP just adds a port number to the Ip address
+
+
+In a packet-switched network, each router needs to decide which router to send the packet to next. This is done by looking at the destination IP address of the packet, and then looking at the routing table to decide which router to send the packet to next.
+
+IPv4 Addresses
+: IP addresses with 4 binary bytes, or 32 bits. Each byte is separated by a period, and each byte can have a value between 0 and 255. There are 2^32 possible IPv4 addresses, but many are reserved for special purposes.
+
+IPv6 Addresses
+: IP addresses with 8 hexadecimal bytes, or 128 bits. Each byte is separated by a colon, and each byte can have a value between 0 and FFFF. There are 2^128 possible IPv6 addresses, which is a lot more than IPv4.
+
+Network Ports
+: A 16 bit, 2 byte number that is used to identify a specific process or network service. Used by TCP and UDP, in combination with an IP address, to identify a specific transfer process on a specific device.
+
+Some CLI commands for networks:
+
+- `ifconfig` : show the configurations for the current IP address
+- `ping <domain name or IP address>` : send a packet to the passed domain or IP address to see if the device is reachable, and in how long
+- `traceroute <domain name or IP address>` : show the route that packets take to get to the passed domain or IP address, and how long each hop takes
+- `netstat` : show the network connections, routing tables, interface statistics, masquerade connections, and multicast memberships
+
