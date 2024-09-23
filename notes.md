@@ -348,3 +348,87 @@ Some CLI commands for networks:
 - `traceroute <domain name or IP address>` : show the route that packets take to get to the passed domain or IP address, and how long each hop takes
 - `netstat` : show the network connections, routing tables, interface statistics, masquerade connections, and multicast memberships
 
+### Lecture 9.22.24: HTTP and HTTPS
+
+World Wide Web (WWW)
+: A set of documents and other filed linked together by hyperlinks, hosted and made available by web servers, and accessed by web clients.
+
+WWW documents/resources are accessed using the HTTP protocol.
+
+WWW is *not* the internet, and it is *not* a computer network.
+
+Simple/essential parts of a URL:
+
+- Protocol: `http` or `https`
+- Domain: `www.google.com`
+- Path: `/search?q=itc210`
+
+More detailed parts of a URL:
+
+- Includes three above parts but also:
+- Subdomain: `.video.google.com`
+- Port: `:80` or `:443`
+- Query and parameters: `?q=itc210`
+- Fragment: `#section1`
+
+HTTP Protocol
+: Hypertext Transfer Protocol. A pull protocol, meaning it is initiated by the client, that uses TCP to transfer hypertext resources from a server to a client. It is a stateless protocol, meaning that each request is independent of the others.
+
+Example HTTP request:
+
+```HTTP
+GET /index.html HTTP/1.1
+Host: www.example.com
+Accept: text/html
+Accept-Language: en-us
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0
+Content-Length: 35
+
+name=John+Doe&age=25&occupation=student
+```
+
+The first line is called the **request line** which includes the HTTP method that is being used, and the path to the resource that method is being called on. The next lines are the request headers, which are key-value pairs that give the server more information about the request. Then there is a blank line which separates the header from the body. The body contains the data that is being sent to the server.
+
+Example HTTP Response:
+
+```HTTP
+HTTP/1.1 200 OK
+Date: Mon, 23 Sep 2024 12:00:00 GMT
+Server: Apache/2.4.7
+Last-Modified: Mon, 23 Sep 2024 11:00:00 GMT
+ETag: "10000000565a5-2c-50d4d31b45040"
+Accept-Ranges: bytes
+Content-Length: 35
+Connection: close
+Content-Type: text/html
+
+<!DOCTYPE html>
+```
+
+The structure of the response is the same as the request message, only the request line is replaced with the **status line**, which includes the HTTP version, and the response code for the request. The rest of the message follows the same format: headers, a blank line, and the body.
+
+HTTP Status Codes:
+
+- 1xx: Informational
+- 200: OK, request is fulfilled
+- 3xx: Redirection
+- 400: Client Error
+- 401: Authentication required
+- 403: Forbidden
+- 404: Not Found
+- 408: Request Timeout
+- 500: Server Error (bug in server code)
+- 503: Service Unavailable (server is down or overloaded)
+
+HTTP Methods:
+
+- GET: Retrieve data from the server. Payload must be textual data in the query string.
+- PUT: Send data to the server to update a resource. Payload can be text data or binary.
+- POST: Send data to the server. Payload can be text data or binary.
+
+HTTPS Protocol
+: Hypertext Transfer Protocol Secure. An ***extension of*** HTTP that is used to secure the communication between a client and a server. It uses SSL/TLS to encrypt the data that is sent between the client and the server. Request and Reponse messaging and methods are the same as HTTP.
+
+TLS is what authenticates the server with a certificate, and then encrypts the data that is sent between the client and the server. The certificate is issued by a Certificate Authority (CA), and is used to verify that the server is who it says it is.
+
