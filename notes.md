@@ -432,3 +432,10 @@ HTTPS Protocol
 
 TLS is what authenticates the server with a certificate, and then encrypts the data that is sent between the client and the server. The certificate is issued by a Certificate Authority (CA), and is used to verify that the server is who it says it is.
 
+### Notes from Lab 2A
+
+When FormData is converted into a JSON string, the value of the `name` attriburte of the form elements is used as the key in the JSON object, and the value of the form element is used as the value in the JSON object.
+
+>Current problems: `updateStorage(newData)` is only putting the first element of the array into local storage. I need to figure out how to put the whole array into local storage.
+
+Okay, so some janky stuff. Although `localStorage` only ever shows the first array element when I call it in the console, when I call `createTask()` it shows the whole array of items. In other words, when I assign the return value of `readStorage()` to a new array, it shows the whole of the array. I think that something about the `localStorage` object make it only display the first element when I call it in the console. 
