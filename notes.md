@@ -439,3 +439,12 @@ When FormData is converted into a JSON string, the value of the `name` attriburt
 >Current problems: `updateStorage(newData)` is only putting the first element of the array into local storage. I need to figure out how to put the whole array into local storage.
 
 Okay, so some janky stuff. Although `localStorage` only ever shows the first array element when I call it in the console, when I call `createTask()` it shows the whole array of items. In other words, when I assign the return value of `readStorage()` to a new array, it shows the whole of the array. I think that something about the `localStorage` object make it only display the first element when I call it in the console. 
+
+`.find()` is another method that can be used on arrays using the syntax that was used with `.map()`. It returns the first element in the array that satisfies the condition in the callback function. Here is the syntax used: `array.find(element => condition)`. Element was essentially used like the iterator in a for loop.
+
+`.splice()` is another handy JS array method. It is used to add or remove elements from an array. The syntax is `array.splice(start, deleteCount, item1, item2, item3)`. `start` is the index at which to start changing the array, `deleteCount` is the number of elements to remove from the array, and `item1`, `item2`, and `item3` are the elements to add to the array. If `deleteCount` is 0, no elements are removed from the array. The items to delete parameters are optional, and if no items to add are passed in, it simply removes the elements from the array (as long as deleteCount is not 0).
+
+A couple of final notes: I had to assign a function to the onload event for the window object. In reality, I should've opened my notes about event handling in JS, and I probably could've come up with the code more easily.
+
+Second, to bug fix the styles, I simply had to make sure the right CSS classes and HTML attributes were being applied by the JavaScript, since the `checked` HTML attribute was what dictated the check icon showing up on the checkbox.
+
