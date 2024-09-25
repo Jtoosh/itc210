@@ -1,0 +1,77 @@
+BYU IT&C 210A Homework 3: HTML Forms, GET and POST"
+ANSWER SHEET
+
+Your Name: James Teuscher
+Date: Sept 25, 2024
+
+27 points possible. 9 questions. 3 points per question. Score will be scaled to 30 points in LearningSuite
+
+Please write or paste your answers between the lines after each question.
+
+=============================
+1. Create an HTML page with a simple form
+
+(No questions for this section.)
+
+=============================
+2. Set the form action
+
+(No questions for this section.)
+
+
+=============================
+3. Enter something into the form and view the results
+
+Which HTTP verb (GET, POST, PUT, etc.) was used?
+-----
+GET
+-----
+
+Where are your form responses passed to the server?
+-----
+In the path/query string
+-----
+
+Suppose you weren't using a service that echoes the request back. Would you be
+able to see your form responses anywhere in the browser?
+-----
+Yes, you can see the path and query string in the browser address bar.
+-----
+
+
+=============================
+4. Change the Form method to “post”
+
+Which HTTP verb was used this time?
+-----
+POST
+-----
+
+Where are your form responses passed to the server this time?
+-----
+In the body
+-----
+
+Suppose you weren't using a service that echoes the request back.
+Would you be able to see your form responses anywhere on the current page or address bar?
+-----
+No, because there are no query strings to view in the path.
+-----
+
+What is the data format of the form submission?
+-----
+application/x-www-form-urlencoded
+-----
+
+=============================
+5. Change the Form encoding to “multipart/form-data”
+
+What is the data format of the form submission this time?
+-----
+
+-----
+
+Are the data different or just the encoding?
+-----
+
+-----

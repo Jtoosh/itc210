@@ -388,7 +388,7 @@ Content-Length: 35
 name=John+Doe&age=25&occupation=student
 ```
 
-The first line is called the **request line** which includes the HTTP method that is being used, and the path to the resource that method is being called on. The next lines are the request headers, which are key-value pairs that give the server more information about the request. Then there is a blank line which separates the header from the body. The body contains the data that is being sent to the server.
+The first line is called the **request line** which includes the HTTP method that is being used, and the path to the resource that method is being called on, as well as the query string with information, such as form responses. The next lines are the request headers, which are key-value pairs that give the server more information about the request. Then there is a blank line which separates the header from the body. The body contains the data that is being sent to the server.
 
 Example HTTP Response:
 
@@ -448,3 +448,15 @@ A couple of final notes: I had to assign a function to the onload event for the 
 
 Second, to bug fix the styles, I simply had to make sure the right CSS classes and HTML attributes were being applied by the JavaScript, since the `checked` HTML attribute was what dictated the check icon showing up on the checkbox.
 
+### Lecture 9.25.24: UML and Debugging
+
+UML
+: Unified Modeling Language. A family of certain graphical notations, with an overarching model, that help in describing and designing software systems, particularly object oriented ones.
+
+From my CS202 notes: 
+
+The need for graphic modeling languages stems from the fact that programming languages are not quite abstract enough to foster discussions about design. So, using a graphical modeling language allows for those discussions to happen
+
+For lots of details about Activity Diagrams, [here are my 202 notes](./UML%20Activity%20Diagrams.md)
+
+[Here are my notes about Class Diagrams](./umlClassDiagrams.md) 
