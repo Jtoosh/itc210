@@ -68,10 +68,10 @@ application/x-www-form-urlencoded
 
 What is the data format of the form submission this time?
 -----
-
+A now the data format is "multipart/form-data; boundary=----WebKitFormBoundaryXmeeiRV1IfAT9bbg"
 -----
 
 Are the data different or just the encoding?
 -----
-
+The data isn't different, but the encoding and formatting is different.
 -----

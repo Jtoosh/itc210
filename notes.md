@@ -374,7 +374,7 @@ More detailed parts of a URL:
 HTTP Protocol
 : Hypertext Transfer Protocol. A pull protocol, meaning it is initiated by the client, that uses TCP to transfer hypertext resources from a server to a client. It is a stateless protocol, meaning that each request is independent of the others.
 
-Example HTTP request:
+Example HTTP *request*:
 
 ```HTTP
 GET /index.html HTTP/1.1
@@ -390,7 +390,7 @@ name=John+Doe&age=25&occupation=student
 
 The first line is called the **request line** which includes the HTTP method that is being used, and the path to the resource that method is being called on, as well as the query string with information, such as form responses. The next lines are the request headers, which are key-value pairs that give the server more information about the request. Then there is a blank line which separates the header from the body. The body contains the data that is being sent to the server.
 
-Example HTTP Response:
+Example HTTP *Response*:
 
 ```HTTP
 HTTP/1.1 200 OK
@@ -407,6 +407,10 @@ Content-Type: text/html
 ```
 
 The structure of the response is the same as the request message, only the request line is replaced with the **status line**, which includes the HTTP version, and the response code for the request. The rest of the message follows the same format: headers, a blank line, and the body.
+
+HTTP with form data: the `method` attribute of a form element determines which HTTP method is used. The `action` attribute determines the URL that the form data is sent to. The `enctype` attribute determines how the form data is encoded before it is sent to the server. The default value for the `enctype` attribute is `application/x-www-form-urlencoded`, which is used to encode form data as key-value pairs separated by `&` and spaces are replaced by `+`. The `multipart/form-data` value is used to send binary data, like files, to the server.
+
+With a GET method, the form data is sent in the query string of the URL. With a POST method, the form data is sent in the body of the request.
 
 HTTP Status Codes:
 
@@ -459,4 +463,7 @@ The need for graphic modeling languages stems from the fact that programming lan
 
 For lots of details about Activity Diagrams, [here are my 202 notes](./UML%20Activity%20Diagrams.md)
 
-[Here are my notes about Class Diagrams](./umlClassDiagrams.md) 
+[Here are my notes about Class Diagrams](./umlClassDiagrams.md)
+
+### Lab 2B Notes
+
