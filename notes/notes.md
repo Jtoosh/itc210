@@ -457,7 +457,7 @@ Second, to bug fix the styles, I simply had to make sure the right CSS classes a
 UML
 : Unified Modeling Language. A family of certain graphical notations, with an overarching model, that help in describing and designing software systems, particularly object oriented ones.
 
-From my CS202 notes: 
+From my CS202 notes:
 
 The need for graphic modeling languages stems from the fact that programming languages are not quite abstract enough to foster discussions about design. So, using a graphical modeling language allows for those discussions to happen
 
@@ -467,3 +467,41 @@ For lots of details about Activity Diagrams, [here are my 202 notes](./UML%20Act
 
 ### Lab 2B Notes
 
+
+### Lecture 9.27.24: SQL
+
+Types of Databases:
+
+- Hierarchical: Mostly obsolete
+- Relational: Most common and popular, uses tables. Examples include MySQL, PostgreSQL, Oracle, Microsoft SQL Server, and SQLite.
+- Specialty and Custom Databases: Used for specific applications. Includes directory systems like Active Directory LDAP Databases, and Full-Text Databases like Elasticsearch or Google Search
+- "NoSQL" Database: MongoDB, Cassandra, CouchDB, and others.
+
+Relational databases are what we will use in class. It means that there are relationship between the data. Even separates can be linked.
+
+SQL
+: Structured Query Language. A standard language for accessing databases. It is an underlying languaged used by many Relation Database Management Systems (RDBMS). Not case sensitive. Clauses are introduced by keywords in all caps(by convention). Comments are done using `--` or `/* */`. Strongly typed.
+
+Simple SQL Queries:
+
+- `SELECT`: Used to select which column (field) of data from a database to access
+- `FROM`: Used to select which table to access the data from
+- `WHERE`: Used to filter the data that is returned
+- `ORDER BY`: Used to sort the data that is returned
+- `GROUP BY`: Used to group the data that is returned
+- `DESC`: Used to sort the data in descending order
+
+Aggregate Functions:
+
+- `COUNT()`: Returns the number of rows that match the query
+- `SUM()`: Returns the sum of the values in a column
+- `AVG()`: Returns the average of the values in a column
+- `MIN()`: Returns the minimum value in a column
+- `MAX()`: Returns the maximum value in a column
+
+SQL Joins:
+
+- `INNER JOIN`: Returns records that have matching values in both tables
+- `LEFT JOIN`: Returns all records from the left table, and the matched records from the right table
+- `RIGHT JOIN`: Returns all records from the right table, and the matched records from the left table
+- `OUTER JOIN`: Returns all records when there is a match in either left or right table

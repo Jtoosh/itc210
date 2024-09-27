@@ -1,0 +1,31 @@
+version: "3.7"
+services:
+  mariadb:
+    container_name: mariadb
+    image: mariadb
+    volumes:
+      - mariadb:/var/lib/mysql
+    ports:
+      - 3306:3306
+    restart: always
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "no"
+      MYSQL_ROOT_PASSWORD: toor
+      MYSQL_USER: developer
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: my_movies
+
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin/phpmyadmin
+    depends_on:
+      - mariadb
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      PMA_HOST: mariadb
+      MYSQL_ROOT_PASSWORD: toor
+
+volumes:
+  mariadb:
