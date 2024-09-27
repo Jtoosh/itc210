@@ -467,6 +467,9 @@ For lots of details about Activity Diagrams, [here are my 202 notes](./UML%20Act
 
 ### Lab 2B Notes
 
+BASH stands for Bourne Again SHell. It is a command language interpreter that is used in Unix and Unix-like operating systems. It is a shell that is used to execute commands, and is the default shell for most Linux distributions. Bash scripts are text files that contain a series of commands that are executed by the Bash shell.
+
+The syntax is pretty simple, since you just type in the commands that you would normally type into the terminal. The only difference is that you can use variables, loops, and conditionals in a Bash script. You also start every script with `#!/bin/bash` to tell the system that the script should be executed by the Bash shell. Variables are named like most programming langauges, and when referenced a `$` is used before the variable name. 
 
 ### Lecture 9.27.24: SQL
 
