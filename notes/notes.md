@@ -508,3 +508,39 @@ SQL Joins:
 - `LEFT JOIN`: Returns all records from the left table, and the matched records from the right table
 - `RIGHT JOIN`: Returns all records from the right table, and the matched records from the left table
 - `OUTER JOIN`: Returns all records when there is a match in either left or right table
+
+### Lecture 9.30.24: PHP
+
+The LAMP Stack
+: A technology stack for web development that consists of Linux, Apache, MySQL, and PHP. It is used to host dynamic websites and web applications.
+
+The highest volume websites don't use PHP, but a lot of websites do still use php.
+
+Why a server-side language?
+
+- Security: Client-side code can be seen by anyone, and can be manipulated by anyone. Server-side code is executed on the server, and the results are sent to the client.
+- Performance: Server-side code can be optimized to run faster than client-side code.
+- Session tracking
+- Database access
+- Use of libraries that work well for things like emails
+
+PHP:
+
+- Imperative languages
+- Interpreted runtime model
+- Variables are case sensitive and dynamically typed
+- Syntax: `<?php ?>`
+- Uses curly braces like C++, Java
+- PHP is object oriented, and has classes and objects
+
+Because PHP is exectuted on the server, when viewing a php site in the browser, the code is not visible in the browser, the file is just rendered with the resulting HTML. So any variables used won't appear, just the values that they evaluate to.
+
+Switching in and out of PHP when incorporating HTML into the code is difficult and hard to read. A better alternative is to just `echo` HTML text needed.
+
+`htmlspecialchars()` is a function that is used to convert special characters to HTML entities. This is used to prevent XSS attacks, where a user inputs malicious code into a form that is then executed on the server. This should be used whenever you display info from your database. So if someone inserted a script tag, or code inside of an element attribute, it would be displayed as text, not executed.
+
+Associative arrays are essentially like dictionaries. The keys are assigned on the left, and are pointed to the values using `=>`. To index into a key-value pair, use the key in square brackets and single quotes.
+
+`$_GET` is a superglobal variable that is used to send form data in a query string after submitting an HTML form with the `method="get"` attribute. It is an associative array that contains the key-value pairs of the form data. The key is the name of the form element, and the value is the value of the form element. It also gets data from query strings, with the key being on the left side of the `=` in the query string, and value being on the right side.
+
+`$_POST` is a superglobal variable that is used to send form data in the body of the HTTP request after submitting an HTML form with the `method="post"` attribute. It is an associative array that contains the key-value pairs of the form data. The key is the name of the form element, and the value is the value of the form element.
