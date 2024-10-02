@@ -53,6 +53,7 @@ if ($_POST["action"] == "Find") {
 
     // Perform the search
     $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $value);
     $stmt->execute();
     $stmt->bind_result($rmake, $rmodel, $ryear, $rplate, $rowner);
 
@@ -63,11 +64,7 @@ if ($_POST["action"] == "Find") {
     <?
     while($row = $stmt->fetch()) {
         ?>
-        <tr><td><? echo $rmake; ?></td>
-        <td><? echo $rmodel; ?></td>
-        <td><? echo $ryear; ?></td>
-        <td><? echo $rplate; ?></td>
-        <td><? echo $rowner; ?></td></tr>
+        
         <?
     }
     $stmt->free_result();
