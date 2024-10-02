@@ -544,3 +544,20 @@ Associative arrays are essentially like dictionaries. The keys are assigned on t
 `$_GET` is a superglobal variable that is used to send form data in a query string after submitting an HTML form with the `method="get"` attribute. It is an associative array that contains the key-value pairs of the form data. The key is the name of the form element, and the value is the value of the form element. It also gets data from query strings, with the key being on the left side of the `=` in the query string, and value being on the right side.
 
 `$_POST` is a superglobal variable that is used to send form data in the body of the HTTP request after submitting an HTML form with the `method="post"` attribute. It is an associative array that contains the key-value pairs of the form data. The key is the name of the form element, and the value is the value of the form element.
+
+### Lecture 10.2.24: PHP with SQL
+
+SQL Injection is when a user inputs into a field SQL code that is then executed on the server, which can perform malicious actions. Similar to XSS (cross site scripting attacks)
+
+>All programming languages are based in English. Regardless of where you are, keywords are still in English.
+
+A couple ways to protect against SQL injection:
+
+- Good: use the escape string before inserting into a Query. This is done with the `real_escape_string()` method in PHP, and something similar in JS.
+
+- Better: Prepared statements. This uses binding the parameters to a certain data type, using the `bind_param()` method in PHP. One of the parameters of the method is the data type of the parameter, which is a string that contains the data types of the parameters in the query. The data types are represented by a single character, with `s` representing a string, `i` representing an integer, and `d` representing a double. So, `bind_param("ss", $name, $email)` would bind the `$name` and `$email` variables to the query as strings.
+
+- Articles on LS show lots of other methods. TODO: Grab links later
+
+Here is a particularly useful table for terms used:
+![Useful Table](./synonymTable.png)

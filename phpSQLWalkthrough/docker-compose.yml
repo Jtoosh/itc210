@@ -1,0 +1,33 @@
+version: "3.7"
+services:
+  web:
+    container_name: apache-php
+    build:
+      context: .
+      dockerfile: Apache-PHP-Mysqli.dockerfile
+    ports:
+      - 80:80
+    volumes:
+      - ./src:/var/www/html
+    depends_on:
+      - mariadb
+    env_file: 
+      - .env
+
+  mariadb:
+    container_name: mariadb
+    image: mariadb
+    volumes:
+      - mariadb:/var/lib/mysql
+    ports:
+      - 3306:3306
+    restart: always
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "no"
+      MYSQL_ROOT_PASSWORD: BatteryMobileRackScale
+      MYSQL_USER: $MYSQL_USER
+      MYSQL_PASSWORD: $MYSQL_PASSWORD
+      MYSQL_DATABASE: $MYSQL_DATABASE
+
+volumes:
+  mariadb:
