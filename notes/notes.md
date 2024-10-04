@@ -561,3 +561,36 @@ A couple ways to protect against SQL injection:
 
 Here is a particularly useful table for terms used:
 ![Useful Table](./synonymTable.png)
+
+### Lecture 10.4.24: State, Cookies, and Sessions
+
+HTTP is a stateless protocol, meaning that each request is independent of the others. This means that the server doesn't remember anything about the client between requests. 
+
+HTTP was made stateless because of the scale of the web, and the tech available at the time. Most computers only had memory in the MB range, not GBs of memory.
+
+Included in the state of an application is different types of data (identity, authorization, working data like documents and projects, view state and much more), and the lifetime of the state (session lifetime, persistent lifetime).
+
+The state resides in multiple places: the URL, Cookies, Server sessions, HTML Web storage like localStorage (persistent) and sessionStorage(session), or a server-side database(persistent).
+
+Cookies
+: A small text string stored in a browser area called a "cookie jar". They are name-value pairs that store data like expiration date, location, and source. Domain and path are stored as well.
+
+**Types of Cookies:**
+
+- *First party* cookies come from the domain you are visiting while *third party* cookies come from a different domain, usually advertisements and tracking (lots of browsers can be set to block 3rd party cookies, and now some do this by default).
+- *Session* cookies are temporary and are deleted when the browser is closed, while *Persistent* cookies are stored on the user's computer in the browser for a longer time and remain when you revisit a site.
+
+Cookies are used for session management, persistent personalization, and web analytics.
+
+Cookies introduce various privacy and security concerns. 3rd party cookies track users across websites, but turning them off breaks some reputable sites, like Microsfot teams for example. Cookies can also be hijacked or forged, especially on http. Digital signatures can be used to prevent forgery.
+
+The GDPR in the EU requires that websites get opt-in consent from EU citizens before using cookies, regardless of where they live, which is why opt in messages are seen on websites in the US too.
+
+**Cookie Mechanics:**
+Cookies can be disabled or cleared by users, and they are tied to a single browser. Cookies are passed in the HTTP headers.
+
+Manipulating cookies can be done in PHP and JavaScript. In PHP, cookies are set using the `setcookie()` function, with the parameters being the name, value, expiration time, path, and domain. Cookies must be set before the `html` element is created. Cookies are retried using the `$_COOKIE` superglobal, with the key being the name of the cookie. To delete a cookie, the workaround is to set and expiration date in the past. In JavaScript, cookies are set and retrieved using the `document.cookie` property. 
+
+When manipulating cookies with JavaScript, using a library is helpful, like `cookiehelp.js` from the demo.
+
+A new session can be created using the `session_start()` PHP function.
