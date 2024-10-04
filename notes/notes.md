@@ -442,7 +442,7 @@ When FormData is converted into a JSON string, the value of the `name` attriburt
 
 >Current problems: `updateStorage(newData)` is only putting the first element of the array into local storage. I need to figure out how to put the whole array into local storage.
 
-Okay, so some janky stuff. Although `localStorage` only ever shows the first array element when I call it in the console, when I call `createTask()` it shows the whole array of items. In other words, when I assign the return value of `readStorage()` to a new array, it shows the whole of the array. I think that something about the `localStorage` object make it only display the first element when I call it in the console. 
+Okay, so some janky stuff. Although `localStorage` only ever shows the first array element when I call it in the console, when I call `createTask()` it shows the whole array of items. In other words, when I assign the return value of `readStorage()` to a new array, it shows the whole of the array. I think that something about the `localStorage` object make it only display the first element when I call it in the console.
 
 `.find()` is another method that can be used on arrays using the syntax that was used with `.map()`. It returns the first element in the array that satisfies the condition in the callback function. Here is the syntax used: `array.find(element => condition)`. Element was essentially used like the iterator in a for loop.
 
