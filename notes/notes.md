@@ -289,7 +289,7 @@ Other MA Protocols:
   Used in 4G, 5G cell phone systems and WiFi 6.
 
 OSI model: Open Systems Interconnection model
-: A conceptual framework that standardizes the functions of a telecommunication or computing system into seven abstraction layers. Each layer serves the layer above it and is served by the layer below it. The layers are: Physical, Data Link, Network, Transport, Session, Presentation, and Application. 
+: A conceptual framework that standardizes the functions of a telecommunication or computing system into seven abstraction layers. Each layer serves the layer above it and is served by the layer below it. The layers are: Physical, Data Link, Network, Transport, Session, Presentation, and Application.
 
 Turns out that OSI is all theory and not practiced. Only TCP/IP is used in practice.
 
@@ -300,7 +300,7 @@ Layer 4 and up is mostly software. Layer 3 is where routing happenes. Networks, 
 
 Hub vs Switch:
 
-- Hub: Broadcasts all packets to all devices on the network. 
+- Hub: Broadcasts all packets to all devices on the network.
 - Switch: Only sends packets to the device that the packet is intended for.
 - Switches are more efficient than hubs, because they don't broadcast all packets to all devices.
 - Switches are more complicated than hubs, and they need to know the MAC address of the devices on the network to send packets to the correct device.
@@ -328,7 +328,6 @@ UDP: Universal Datagram Protocol vs TCP: Terminal Control Protocol
 - Ordered delivery is guaranteed with TCP, but UDP is unordered delivery
 - TCP has flow control, but UDP does not
 - TCP includes a port number, UDP just adds a port number to the Ip address
-
 
 In a packet-switched network, each router needs to decide which router to send the packet to next. This is done by looking at the destination IP address of the packet, and then looking at the routing table to decide which router to send the packet to next.
 
@@ -469,7 +468,7 @@ For lots of details about Activity Diagrams, [here are my 202 notes](./UML%20Act
 
 BASH stands for Bourne Again SHell. It is a command language interpreter that is used in Unix and Unix-like operating systems. It is a shell that is used to execute commands, and is the default shell for most Linux distributions. Bash scripts are text files that contain a series of commands that are executed by the Bash shell.
 
-The syntax is pretty simple, since you just type in the commands that you would normally type into the terminal. The only difference is that you can use variables, loops, and conditionals in a Bash script. You also start every script with `#!/bin/bash` to tell the system that the script should be executed by the Bash shell. Variables are named like most programming langauges, and when referenced a `$` is used before the variable name. 
+The syntax is pretty simple, since you just type in the commands that you would normally type into the terminal. The only difference is that you can use variables, loops, and conditionals in a Bash script. You also start every script with `#!/bin/bash` to tell the system that the script should be executed by the Bash shell. Variables are named like most programming langauges, and when referenced a `$` is used before the variable name.
 
 ### Lecture 9.27.24: SQL
 
@@ -564,7 +563,7 @@ Here is a particularly useful table for terms used:
 
 ### Lecture 10.4.24: State, Cookies, and Sessions
 
-HTTP is a stateless protocol, meaning that each request is independent of the others. This means that the server doesn't remember anything about the client between requests. 
+HTTP is a stateless protocol, meaning that each request is independent of the others. This means that the server doesn't remember anything about the client between requests.
 
 HTTP was made stateless because of the scale of the web, and the tech available at the time. Most computers only had memory in the MB range, not GBs of memory.
 
@@ -589,8 +588,34 @@ The GDPR in the EU requires that websites get opt-in consent from EU citizens be
 **Cookie Mechanics:**
 Cookies can be disabled or cleared by users, and they are tied to a single browser. Cookies are passed in the HTTP headers.
 
-Manipulating cookies can be done in PHP and JavaScript. In PHP, cookies are set using the `setcookie()` function, with the parameters being the name, value, expiration time, path, and domain. Cookies must be set before the `html` element is created. Cookies are retried using the `$_COOKIE` superglobal, with the key being the name of the cookie. To delete a cookie, the workaround is to set and expiration date in the past. In JavaScript, cookies are set and retrieved using the `document.cookie` property. 
+Manipulating cookies can be done in PHP and JavaScript. In PHP, cookies are set using the `setcookie()` function, with the parameters being the name, value, expiration time, path, and domain. Cookies must be set before the `html` element is created. Cookies are retried using the `$_COOKIE` superglobal, with the key being the name of the cookie. To delete a cookie, the workaround is to set and expiration date in the past. In JavaScript, cookies are set and retrieved using the `document.cookie` property.
 
 When manipulating cookies with JavaScript, using a library is helpful, like `cookiehelp.js` from the demo.
 
 A new session can be created using the `session_start()` PHP function.
+
+### Lecture 10.7.24: Principles of Learning
+
+Learning Engineering
+: A process and practice that applies learning sciences using human-centered engineering design methods and data-informed decision making, to support learners and their development.
+
+Koedinger and his colleagues discovered that most everyone needs 7-8 learning opportunities to master a subject. This remarkable consistency in learning rate shows that there isn't really such thing as natural aptitude, just a difference in interest, which motivates seeking out those learning opportunities.
+
+Intrinsic motivations are more powerful, particularly for cognitively demanding tasks. Extrinsic motivations can convert inheretly enjoyable tasks into chores, and can be detrimental to learning.
+
+Autonomy, mastery, and purpose are the three key factors in motivation.
+
+Growth mindset
+: *belief* that skill and ability can be increased with effort and practice. Studies show that belief about ability to improved does affect future peformance.
+
+Flow Channel
+: Optimal state of skills and challenge. When the challenge is too high, anxiety results. When the challenge is too low, boredom results. Frustration is a result of both anxiety or boredom. When the challenge is just right, flow results.
+
+
+### Lab 3A Notes
+
+- Some important info that I got from this lab. One of the is that `session_start()` needs to be at the top of *every* PHP file that is going to access session variables.
+
+- Another is how to redirect. The `header()` function is used to send a raw HTTP header to the browser. The syntax is `header("Location: url")`.
+
+- Another useful bit of info is how the action and method attributes of a form element work. The action attribute is used to specify the URL that the form data is sent to, but can also be a subdirectory or file in the same directory as the form. The method attribute is used to specify the HTTP method that is used to send the form data, and must be in all lowercase, rather than the all caps syntax used to access those superglobal associative arrays.
