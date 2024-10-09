@@ -13,3 +13,6 @@
 [submodule "lab-3a-Jtoosh"]
 	path = lab-3a-Jtoosh
 	url = https://github.com/BYU-ITC-210/lab-3a-Jtoosh.git
+[submodule "lab-3b-Jtoosh"]
+	path = lab-3b-Jtoosh
+	url = https://github.com/BYU-ITC-210/lab-3b-Jtoosh.git

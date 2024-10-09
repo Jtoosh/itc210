@@ -619,3 +619,16 @@ Flow Channel
 - Another is how to redirect. The `header()` function is used to send a raw HTTP header to the browser. The syntax is `header("Location: url")`.
 
 - Another useful bit of info is how the action and method attributes of a form element work. The action attribute is used to specify the URL that the form data is sent to, but can also be a subdirectory or file in the same directory as the form. The method attribute is used to specify the HTTP method that is used to send the form data, and must be in all lowercase, rather than the all caps syntax used to access those superglobal associative arrays.
+
+### Lecture 10.9.24: Applied Cryptography
+
+Cryptography
+: The science of communicsteing with secret codes. Deals with 4 of the 5 core security services: confidentiality, integrity, authentication, and non-repudiation.
+
+Encryption takes plain text to ciphertext, and decryption takes ciphertext to plain text. The key is used to encrypt and decrypt the data.
+
+3 Main Types of Cryptographic Algorithms:
+
+- Symmetric: Uses the same key to encrypt and decrypt the data. Examples include DES, AES, and Blowfish.
+- Asymmetric: Uses a public key to encrypt the data, and a private key to decrypt the data. Examples include RSA, DSA, and ECC.
+- Hashing: Uses a hash function to convert data into a fixed length string of characters. Examples include MD5, SHA-1, and SHA-256.
