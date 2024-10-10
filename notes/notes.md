@@ -611,7 +611,6 @@ Growth mindset
 Flow Channel
 : Optimal state of skills and challenge. When the challenge is too high, anxiety results. When the challenge is too low, boredom results. Frustration is a result of both anxiety or boredom. When the challenge is just right, flow results.
 
-
 ### Lab 3A Notes
 
 - Some important info that I got from this lab. One of the is that `session_start()` needs to be at the top of *every* PHP file that is going to access session variables.
@@ -629,6 +628,27 @@ Encryption takes plain text to ciphertext, and decryption takes ciphertext to pl
 
 3 Main Types of Cryptographic Algorithms:
 
-- Symmetric: Uses the same key to encrypt and decrypt the data. Examples include DES, AES, and Blowfish.
-- Asymmetric: Uses a public key to encrypt the data, and a private key to decrypt the data. Examples include RSA, DSA, and ECC.
+- Symmetric: Uses the same key to encrypt and decrypt the data. Examples include DES(Data Encryption Standard), AES(Advanced Encryption Standard), and Blowfish.
+- Asymmetric: Uses a public key to encrypt the data, and a private key to decrypt the data. More secure because keys are longer. Someone can't decrypt data even if you have the public key. Is slower and harder to do. Examples include RSA(Revest-Shamir-Admin), DSA, and ECC.
 - Hashing: Uses a hash function to convert data into a fixed length string of characters. Examples include MD5, SHA-1, and SHA-256.
+
+Cryptography requires truly random numbers, which aren't found in Python random number generators, for example. Some sources of random numbers include quantum thermal noise, radioactive decay, and Cloudflare's LavaRand (which uses a wall of lava lamps).
+
+Remember that a hash function should produce the same hash for the same string every time, and should produce a different hash for different strings. Hash functions are used to verify the integrity of data, and to create digital signatures. Hash collisions are when 2 *different* strings produce the same hash.
+
+Because the digest (the output string) of a hash function *cannot* be reverted to the plaintext, the way to verify an input is to hash the input and compare it to the stored hash. The stored hash is stored when the document being sent is "signed". The hashes are compared when verifying the signature. The stored hash is usually encrypted, and then the person with the public key can decrypt the hash and compare it to the hash of the document.
+
+Trust models are 3rd party entities that distribute public keys and maintain integrity. Some include PGP (Pretty Good Privacy) Web of Trust, Public Key Certificate Authorities, and Kerberos.
+
+TLS
+: Transport Layer Security. Provides both encryption (people can't see my data) and authentication (this server is what it says it is). HTTPS is just HTTP over TLS. TLS is the successor to SSL, and is frequently called SSL, though it is technically not the same.
+
+TLS Handshake:
+
+1. Client sends a `ClientHello` message to the server, which includes the client's supported cipher suites, compression methods, and a random number.
+2. Server sends a `ServerHello` message to the client, which includes the server's supported cipher suite, compression method, and a random number.
+3. Server sends a `Certificate` message to the client, which includes the server's certificate, which contains the server's public key.
+4. Server sends a `ServerHelloDone` message to the client, which indicates that the server is done with the handshake.
+5. Client sends a `ClientKeyExchange` message to the server, which includes the pre-master secret, which is encrypted with the server's public key.
+6. Client sends a `ChangeCipherSpec` message to the server, which indicates that the client is switching to the newly negotiated cipher suite.
+7. Client sends a `Finished` message to the server, which includes a hash of all the messages that have been exchanged so far.
