@@ -621,6 +621,10 @@ Flow Channel
 
 - The string concatenation operator in PHP only works properly with strings stored in variables
 
+- When deploying to a server, the php files need to have the php tags formatted like this: `<?php ?>`, ***NOT*** like this: `<? ?>` like Prof. Redd showed in the demo. 
+
+- Update priveleges for a database by signing into PHPMyAdmin as the root user, and then update the priveleges for the database.
+
 ### Lecture 10.9.24: Applied Cryptography
 
 Cryptography
