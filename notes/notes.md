@@ -619,6 +619,8 @@ Flow Channel
 
 - Another useful bit of info is how the action and method attributes of a form element work. The action attribute is used to specify the URL that the form data is sent to, but can also be a subdirectory or file in the same directory as the form. The method attribute is used to specify the HTTP method that is used to send the form data, and must be in all lowercase, rather than the all caps syntax used to access those superglobal associative arrays.
 
+- The string concatenation operator in PHP only works properly with strings stored in variables
+
 ### Lecture 10.9.24: Applied Cryptography
 
 Cryptography
@@ -652,3 +654,10 @@ TLS Handshake:
 5. Client sends a `ClientKeyExchange` message to the server, which includes the pre-master secret, which is encrypted with the server's public key.
 6. Client sends a `ChangeCipherSpec` message to the server, which indicates that the client is switching to the newly negotiated cipher suite.
 7. Client sends a `Finished` message to the server, which includes a hash of all the messages that have been exchanged so far.
+
+### Lecture 10.11.24: Information Security Triad
+
+Information Security Triad
+: A model that describes the three core principles of information security: confidentiality, integrity, and availability.
+
+Risk equation: Risk = Threat x Vulnerability x Impact
