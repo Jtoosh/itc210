@@ -542,7 +542,7 @@ Associative arrays are essentially like dictionaries. The keys are assigned on t
 
 `$_GET` is a superglobal variable that is used to send form data in a query string after submitting an HTML form with the `method="get"` attribute. It is an associative array that contains the key-value pairs of the form data. The key is the name of the form element, and the value is the value of the form element. It also gets data from query strings, with the key being on the left side of the `=` in the query string, and value being on the right side.
 
-`$_POST` is a superglobal variable that is used to send form data in the body of the HTTP request after submitting an HTML form with the `method="post"` attribute. It is an associative array that contains the key-value pairs of the form data. The key is the name of the form element, and the value is the value of the form element.
+`$_POST` is a superglobal variable that is used to send form data in the body of the HTTP request after submitting an HTML form with the `method="post"` attribute. It is an associative array that contains the key-value pairs of the form data. The key is the `name` attribute of the form element, and the value is the value of the form element.
 
 ### Lecture 10.2.24: PHP with SQL
 
@@ -665,3 +665,67 @@ Information Security Triad
 : A model that describes the three core principles of information security: confidentiality, integrity, and availability.
 
 Risk equation: Risk = Threat x Vulnerability x Impact
+
+### Lecture 10.14.24: Email Standards
+
+- Email accounts for the most internet traffic in terms of bytes transmitted. Most of that is spam, however.
+
+RFC
+: Request for Comments. A type of publication from the Internet Engineering Task Force (IETF) and the Internet Society (ISOC). They are used to define the standards and protocols used on the internet.f
+
+SMTP
+: Simple Mail Transfer Protocol. A protocol used to send email messages between servers. It is used to send email from a client to a server, and from one server to another server.
+
+DNS MX Record
+: Mail Exchange Record. A type of DNS record that specifies the mail server that is responsible for receiving email for a domain. It is used to route email to the correct mail server.
+
+POP3
+: Post Office Protocol version 3. A protocol used to transfer mail from server to client applicaiton. Older, but still broadly supported
+
+IMAP
+: Internet Message Access Protocol. A protocol used to transfer mail from server to client application. It is more advanced than POP3, and allows for multiple clients to access the same mailbox. Doesn't handle calendar or contacts very well.
+
+JMAP
+: JSON Meta Application Protocol. Not yet widely adopted, but is a modern protocol that is used to transfer mail from server to client application. It is more efficient than IMAP, and is designed to handle email, calendar, and contacts.
+
+### Lecture 10.16.24: Latency and Bandwidth
+
+Latency
+: The length of the pipe, of the time it takes for a packet to travere the pipe. Often measured in round-trip time (RTT)
+
+Bandwidth
+: The width of the pipe, or the theorhetical max amount of data that can be sent through the pipe at a time.
+
+Packet Loss
+: The number of packets that are lost in transit. The friction in the pipe. Nothing slows transmission down more than packet loss.
+
+Content
+: Amount of data that is sent through the pipe.
+
+Throughput
+: The amount of data that is actually received. It is the bandwidth minus the packet loss.
+
+When people talk about the speed of the internet, they are usually talking about bandwith. All data is transmitted at the speed of light. A flash of light signifies a binary 1, and a lack thereof signifies a binary 0. So "higher speed" internet is really just more bandwidth, allowing more data to get to your client at once.
+
+Technically, MB isn't actually `1024 * 1024` bytes, but `1000 * 1000` bytes, because of the governing body of the metric system. The computationally correct measurements are Kibibyte, Mebibyte, Gibibyte, and Tebibyte. But most people don't use these, they just use the metric system to refer to the base 2 measurements.
+
+Latency is the sum of : Queue delay + Propogation delay + Processing delay
+Propogation delay `= Distance/Propogation speed` (which is nearly the speed of light)
+Queue delay is the time spent waiting in line to be transmitted
+Processing delay is the time spent processing the packet
+
+Latency + (Conent Size/Bandwidth) = Transmission delay
+
+Queue overflow
+: when data is arriving at the queue (router) faaster than it can be transmitted, so new packets are discarded, leading to packet loss.
+
+Noise
+: distortions in the underlying transmission medium (the physical layer, like the eletrical circuit), causing a packet's data to change and fail an error check.
+
+When Google Fiber advertises 5 or 10 Gbps, they may be giving the bandwidth you're paying for, but your computer can't keep up with that type of speed, so it doesn't actually move that fast. You may have a network that moves that fast, but it can't make full use of that. So, paying for super high bandwidth like that is impractical for home/personal use. For a sizeable business, it might be more practical.
+
+Perceived Load time: when the user perceives the page is loaded and can be intercacted with
+Actual load time: when the content is fully loaded
+
+Content Delivery Network (CDN)
+: A geographically distributed network of proxy servers and data centers that cache data. Usually a central server, with lots of satellite servers that have content cached. If the closest satellite server to you doesn't have your content cached, it will get it from the central server. This is used to reduce latency and improve load times.
