@@ -387,6 +387,12 @@ Content-Length: 35
 name=John+Doe&age=25&occupation=student
 ```
 
+Symmetric cryptography is where only one key is used for encryption and decryption, and only the owner has access to this key. This aids the confidentiality security service, as only select people, who have access to one key, are able to access the data, which ideally ensures that only the correct people can access the data.
+
+Asymmetric cryptography is where 2 keys are created. A private key is used for encryption only, and is only owned by the owner of the data. A corresponding public key is created and distributed to intended recipients. The public key is used for decryption only, and only for messages from the corresponding private key. This aids the security service of non-repudiation, as the receiver is able to verify the identiy of the sender, because if their public key can decrypt a message they will know that the message came from the owner of the corresponding private key, and the sender can verify that only those who posses the public keys will be able to actually receive their message.
+
+Hash functions are when a message is converted into a string of random symbols, with the same string of symbols being produced each time for the same message. The resulting string is called a digest, and cannot be converted into the original message. The security of this is increased using a method called "salting", where the message has some random characters attached to it, and then hashed, so that the same message would actually produce different hashes, because of the salt altering the message. This provides the security service of integrity, because this strong encryption method, especially when used with salting, keeps the data from being accessed outside of authorization and tampered.
+
 The first line is called the **request line** which includes the HTTP method that is being used, and the path to the resource that method is being called on, as well as the query string with information, such as form responses. The next lines are the request headers, which are key-value pairs that give the server more information about the request. Then there is a blank line which separates the header from the body. The body contains the data that is being sent to the server.
 
 Example HTTP *Response*:
